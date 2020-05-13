@@ -1,0 +1,22 @@
+
+.navbar {
+    flex-direction: row-reverse !important;
+    background-color: rgb(41, 187, 245) !important;
+}
+// end of .navbar 
+
+.nav-link {
+    color: white !important;
+}
+// end of .nav-link 
+
+.navbar-toggler {
+    color: white !important;
+    border-color: white !important;
+}
+// end of .navbar-toggler 
+
+.navbar .collapse {
+    flex-direction: row-reverse !important;
+}
+// end of .navbar .collapse 

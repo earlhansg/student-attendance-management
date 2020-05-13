@@ -1,3 +1,15 @@
-h1 {
-    color: red;
+
+  
+#page-content-wrapper {
+    min-width: 100vw;
+}
+// end of #page-content-wrapper
+
+@media (min-width: 768px) {
+  
+    #page-content-wrapper {
+      min-width: 0;
+      width: 100%;
+    }
+    // end of #page-content-wrapper 
 }
