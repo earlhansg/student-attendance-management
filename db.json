@@ -5,5 +5,39 @@
     "comments": [
       { "id": 1, "body": "some comment", "postId": 1 }
     ],
-    "profile": { "name": "typicode" }
+    "profile": { "name": "typicode" },
+    "students": [
+      {
+        "id": 1,
+        "idNumber": 22222111,
+        "firstName": "Earl",
+        "lastName": "Genoso",
+        "gender": "M",
+        "section": "Rizal"
+      },
+      {
+        "id": 2,
+        "idNumber": 222567111,
+        "firstName": "Zaddy",
+        "lastName": "Deloy",
+        "gender": "M",
+        "section": "Bonifacio"
+      },
+      {
+        "id": 3,
+        "idNumber": 23422111,
+        "firstName": "Precious",
+        "lastName": "Genoso",
+        "gender": "F",
+        "section": "Ruby"
+      },
+      {
+        "id": 4,
+        "idNumber": 227892111,
+        "firstName": "Kristy",
+        "lastName": "Almuete",
+        "gender": "F",
+        "section": "Rizal"
+      }
+    ]
 }
