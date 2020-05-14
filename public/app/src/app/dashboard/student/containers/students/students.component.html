@@ -1,2 +1,32 @@
-<h1>Students</h1>
-<h1>Students</h1>
+<div class="container">
+
+    <div class="row justify-content-md-center">
+
+        <div class="col-md-11 col-sm-12" id="students">
+            <div class="header">
+                <span class="header__content">
+                    <fa-icon [icon]="faUserFriends"></fa-icon>
+                    Student List
+                </span>
+                <!-- end of .header__content  -->
+            </div>
+            <!-- end of .header  -->
+
+            <ng-container *ngIf="studentStore.students$ | async as students; else loading">
+                <!-- Student List  -->
+                <app-student-list [students]="students"></app-student-list>
+            </ng-container>
+
+            <ng-template #loading>
+                <div class="message">
+                    <img src="/assets/images/loading.svg">
+                    Fetching students...
+                </div>
+            </ng-template>
+            
+        </div>
+        <!-- end of .col-md-11   -->
+    </div>
+    <!-- end of .row  -->
+</div>
+<!-- end of .container  -->
