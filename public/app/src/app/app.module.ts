@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
+import { HttpClientModule } from '@angular/common/http';
+// Modules
 import { DashboardModule } from '@app/dashboard/dashboard.module';
-
 import { AppRoutingModule } from '@app/app-routing.module';
-
+// Components
 import { AppComponent } from '@app/app.component';
 
 @NgModule({
@@ -13,10 +13,13 @@ import { AppComponent } from '@app/app.component';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     DashboardModule
   ],
-  providers: [],
+  providers: [
+    { provide: 'API_URL', useValue: 'http://localhost:3000' }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
