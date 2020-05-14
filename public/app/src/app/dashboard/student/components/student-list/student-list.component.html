@@ -1,5 +1,5 @@
 <div class="student-list">
-    <table class="table table-striped">
+    <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">ID</th>
@@ -10,23 +10,11 @@
         </thead>
         <!-- end of thead  -->
         <tbody>
-            <tr>
-                <td>12222233</td>
-                <td>Mark Lester</td>
-                <td>Male</td>
-                <td>Rizal</td>
-            </tr>
-            <tr>
-                <td>12222233</td>
-                <td>Mark Lester</td>
-                <td>Male</td>
-                <td>Rizal</td>
-            </tr>
-            <tr>
-                <td>12222233</td>
-                <td>Mark Lester</td>
-                <td>Male</td>
-                <td>Rizal</td>
+            <tr *ngFor="let student of students">
+                <td>{{student.idNumber}}</td>
+                <td>{{student.firstName}} {{student.lastName}}</td>
+                <td>{{student.gender}}</td>
+                <td>{{student.section}}</td>
             </tr>
         </tbody>
         <!-- end of tbody  -->
