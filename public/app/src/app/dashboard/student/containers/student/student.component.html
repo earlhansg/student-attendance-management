@@ -1,0 +1,30 @@
+<div class="container">
+
+    <div class="row justify-content-md-center">
+
+        <div class="col-md-11 col-sm-12" id="student">
+            <div class="header">
+                <span class="header__content">
+                    <fa-icon [icon]="faUser"></fa-icon>
+                    New Student
+                </span>
+                <!-- end of .header__content  -->
+            </div>
+            <!-- end of .header  -->
+
+            <!-- Student Form  -->
+            <app-student-form [dataForm]="studentFormData"></app-student-form>
+
+            <ng-template #loading>
+                <div class="message">
+                    <img src="/assets/images/loading.svg">
+                    Fetching students...
+                </div>
+            </ng-template>
+            
+        </div>
+        <!-- end of .col-md-11   -->
+    </div>
+    <!-- end of .row  -->
+</div>
+<!-- end of .container  -->

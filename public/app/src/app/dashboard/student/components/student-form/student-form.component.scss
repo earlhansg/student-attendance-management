@@ -1,0 +1,18 @@
+.student-form {
+    width: 100%;
+    margin: 1.5rem 0;
+
+    @media (max-width: 573px) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+}
+// end of .student-form 
+
+form  {
+    @media (max-width: 573px) {
+        width: 85%;
+    }
+}
+// end of form 
