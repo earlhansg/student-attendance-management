@@ -4,8 +4,6 @@ import { StudentStoreService } from '@app/dashboard/student/shared/services/stud
 
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 
-// Data Form
-import { studentFormData } from '@app/dashboard/student/shared/data';
 
 @Component({
   selector: 'app-student',
@@ -16,7 +14,6 @@ import { studentFormData } from '@app/dashboard/student/shared/data';
 export class StudentComponent {
 
   faUser = faUser;
-  studentFormData = studentFormData;
 
   constructor(public studentStore: StudentStoreService) {}
 

@@ -1,0 +1,48 @@
+<form [formGroup]="form">
+    <div class="form-group" *ngFor="let prop of formProps">
+      <div [ngSwitch]="prop.type">
+
+        <input *ngSwitchCase="'text'"
+               class="form-control" 
+               [type]="prop.type"
+               [placeholder]="prop.label"
+               [formControlName]="prop.key">
+        <!-- end of input  -->
+        <input *ngSwitchCase="'number'"
+               class="form-control" 
+               [type]="prop.type"
+               [placeholder]="prop.label"
+               [formControlName]="prop.key">
+        <!-- end of input  -->
+        <select *ngSwitchCase="'select'" 
+                class="form-control" 
+                [formControlName]="prop.key">
+          <option *ngFor="let option of prop.options" 
+                  [value]="option.value">
+                  {{ option.label }}
+          </option>
+        </select>
+        <!-- end of select  -->
+
+        <div class="text-danger"
+             *ngIf="form.get(prop.key).invalid 
+             && (form.get(prop.key).dirty ||
+             form.get(prop.key).touched)">
+            <div *ngIf="form.get(prop.key).errors.required">You have to provide a value.</div>
+
+            <div *ngIf="form.get(prop.key).errors.min" >
+                You have to provide a value greater or equal to
+                {{ form.get(prop.key).errors.min.min }}
+            </div>
+        </div>
+        <!-- end of .text-danger  -->
+
+      </div>
+      <!-- end of ngSwitch  -->
+
+    </div>
+    <!-- end of .form-group  -->
+
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+</form>
+<!-- end of form  -->

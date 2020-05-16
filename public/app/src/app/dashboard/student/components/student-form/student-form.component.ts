@@ -1,5 +1,7 @@
-import { Component, ChangeDetectionStrategy, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+
+// Data Form
+import { studentFormData } from '@app/dashboard/student/shared/data';
 
 @Component({
   selector: 'app-student-form',
@@ -9,40 +11,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class StudentFormComponent implements OnInit {
 
-  @Input()
-  dataForm: any;
-
-  form: FormGroup;
-  formProps = [];
+  studentFormData = studentFormData;
 
   constructor() {}
 
-  ngOnInit() {
-    const formDataObj = {};
-    for (const prop of Object.keys(this.dataForm)) {
-      formDataObj[prop] = new FormControl(this.dataForm[prop].value,
-      this.mapValidator(this.dataForm[prop].validators));
-
-      this.formProps.push({
-        key: prop,
-        label: this.dataForm[prop].label,
-        type: this.dataForm[prop].type,
-        options: this.dataForm[prop].options
-      });
-    }
-    this.form = new FormGroup(formDataObj);
-  }
-
-
-  mapValidator(validators) {
-    if (validators) {
-      return Object.keys(validators).map(validationType => {
-        if (validationType === 'required' ) {
-          return Validators.required;
-        } else if (validationType === 'min' ) {
-          return Validators.min(validators[validationType]);
-      }});
-    } else { return []; }
-  }
+  ngOnInit() {}
 
 }

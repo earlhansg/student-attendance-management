@@ -10,6 +10,7 @@ import { StudentsComponent } from './containers/students/students.component';
 import { StudentComponent } from './containers/student/student.component';
 import { StudentListComponent } from './components/student-list/student-list.component';
 import { StudentFormComponent } from './components/student-form/student-form.component';
+import { FormComponent } from './shared/components/form/form.component';
 // Services
 import { StudentService } from './shared/services/student/student.service';
 
@@ -26,7 +27,8 @@ import { StudentService } from './shared/services/student/student.service';
     StudentsComponent,
     StudentComponent,
     StudentListComponent,
-    StudentFormComponent
+    StudentFormComponent,
+    FormComponent
   ],
   providers: [
     StudentService

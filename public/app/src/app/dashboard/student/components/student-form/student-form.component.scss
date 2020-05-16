@@ -10,7 +10,7 @@
 }
 // end of .student-form 
 
-form  {
+::ng-deep form  {
     @media (max-width: 573px) {
         width: 85%;
     }
