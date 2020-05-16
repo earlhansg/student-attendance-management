@@ -33,8 +33,8 @@ export class StudentStoreService {
 
     if (body) {
 
-      const dbId = 100;
-      const newStudent = {id: dbId, ...body};
+      // const dbId = 100;
+      const newStudent = {...body};
 
       this.students = [
         ...this.students,
@@ -47,7 +47,7 @@ export class StudentStoreService {
           .toPromise();
 
         // we swap the local student record with the record from the server (id must be updated)
-        const index = this.students.indexOf(this.students.find(data => data.id === dbId));
+        const index = this.students.indexOf(this.students.find(data => data.idNumber === body.idNumber));
         this.students[index] = {
           ...student
         };
@@ -55,21 +55,21 @@ export class StudentStoreService {
       } catch (e) {
         // is server sends back an error, we revert the changes
         console.error(e);
-        this.removeStudent(dbId, false);
+        this.removeStudent(body.idNumber, false);
       }
 
     }
 
   }
 
-  async removeStudent(id: any, serverRemove = true) {
+  async removeStudent(idNumber: any, serverRemove = true) {
     // optimistic update
-    const student = this.students.find(data => data.id === id);
-    this.students = this.students.filter(data => data.id !== id);
+    const student = this.students.find(data => data.idNumber === idNumber);
+    this.students = this.students.filter(data => data.idNumber !== idNumber);
 
     if (serverRemove) {
       try {
-        await this.studentService.removeStudent(id).toPromise();
+        await this.studentService.removeStudent(idNumber).toPromise();
       } catch (e) {
         console.error(e);
         this.students = [...this.students, student];

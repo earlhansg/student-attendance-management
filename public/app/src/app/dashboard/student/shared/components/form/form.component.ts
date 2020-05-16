@@ -1,4 +1,5 @@
-import { Component, ChangeDetectionStrategy, OnInit, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit,
+  Input, Output, EventEmitter } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
@@ -11,6 +12,9 @@ export class FormComponent implements OnInit {
 
   @Input()
   dataForm: any;
+
+  @Output()
+  saveFormValues = new EventEmitter();
 
   form: FormGroup;
   formProps = [];
@@ -43,6 +47,12 @@ export class FormComponent implements OnInit {
           return Validators.min(validators[validationType]);
       }});
     } else { return []; }
+  }
+
+  onSubmit() {
+    if (this.form.valid) {
+      this.saveFormValues.emit(this.form.value);
+    }
   }
 
 }

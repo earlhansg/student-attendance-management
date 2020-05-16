@@ -2,7 +2,9 @@
 <div class="student-form">
   
   <!-- Form Component  -->
-  <app-form [dataForm]="studentFormData"></app-form>
+  <app-form [dataForm]="studentFormData" (saveFormValues)="onsaveFormValues($event)">
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+  </app-form>
     
 </div>
 <!-- end of .student-form  -->
