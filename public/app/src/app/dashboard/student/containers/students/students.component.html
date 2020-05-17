@@ -12,7 +12,8 @@
             </div>
             <!-- end of .header  -->
 
-            <ng-container *ngIf="studentStore.students$ | async as students; else loading">
+            <ng-container 
+                *ngIf="studentStore.students$ | async as students; else loading">
                 <!-- Student List  -->
                 <app-student-list [students]="students"></app-student-list>
             </ng-container>

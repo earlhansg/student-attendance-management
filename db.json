@@ -23,7 +23,7 @@
       "firstName": "Earl",
       "lastName": "Genoso",
       "gender": "M",
-      "section": "Rizal"
+      "section": 1
     },
     {
       "id": 2,
@@ -31,7 +31,7 @@
       "firstName": "Zaddy",
       "lastName": "Deloy",
       "gender": "M",
-      "section": "Bonifacio"
+      "section": 2
     },
     {
       "id": 3,
@@ -39,7 +39,7 @@
       "firstName": "Precious",
       "lastName": "Genoso",
       "gender": "F",
-      "section": "Ruby"
+      "section": 2
     },
     {
       "id": 4,
@@ -47,23 +47,49 @@
       "firstName": "Kristy",
       "lastName": "Almuete",
       "gender": "F",
-      "section": "Rizal"
+      "section": 1
     },
     {
-      "idNumber": "123445777",
-      "firstname": "Jason",
-      "lastname": "Bayocot",
+      "idNumber": "222222",
+      "firstName": "Earl",
+      "lastName": "Yuhan",
       "gender": "M",
       "section": 1,
       "id": 5
     },
     {
-      "idNumber": "99999999",
-      "firstname": "Charlene",
-      "lastname": "Almuete",
-      "gender": "F",
+      "idNumber": "22222111",
+      "firstName": "Charlene",
+      "lastName": "Almuete",
+      "gender": "M",
       "section": "2",
       "id": 6
+    },
+    {
+      "idNumber": "666666",
+      "firstName": "Mary",
+      "lastName": "Almorque",
+      "gender": "F",
+      "section": 1,
+      "id": 7
+    },
+    {
+      "idNumber": "2222",
+      "firstName": "Joy",
+      "lastName": "To the world",
+      "gender": "M",
+      "section": "2",
+      "id": 8
+    }
+  ],
+  "sections": [
+    {
+      "id": 1,
+      "name": "Rizal"
+    },
+    {
+      "id": 2,
+      "name": "Bonifacio"
     }
   ]
 }

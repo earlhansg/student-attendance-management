@@ -1,7 +1,7 @@
 export const studentFormData = {
   idNumber: { label: 'ID', value: '', type: 'number', validators: { required: true, min: 8 } },
-  firstname: { label: 'Firstname', value: '', type: 'text', validators: { required: true }  },
-  lastname: { label: 'Lastname', value: '', type: 'text', validators: { required: true } },
+  firstName: { label: 'Firstname', value: '', type: 'text', validators: { required: true }  },
+  lastName: { label: 'Lastname', value: '', type: 'text', validators: { required: true } },
   gender: {
     label: 'Gender',
     value: 'M',

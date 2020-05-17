@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
-import { Student } from '@app/dashboard/student/shared/models';
+import { Student, Section } from '@app/dashboard/student/shared/models';
 
 @Component({
   selector: 'app-student-list',
@@ -8,6 +8,7 @@ import { Student } from '@app/dashboard/student/shared/models';
   templateUrl: './student-list.component.html'
 })
 export class StudentListComponent {
+
   @Input()
   students: Student[];
 

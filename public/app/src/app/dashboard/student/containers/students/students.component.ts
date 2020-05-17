@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 import { StudentStoreService } from '@app/dashboard/student/shared/services/student/student-store.service';
 
@@ -10,9 +10,11 @@ import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./students.component.scss'],
   templateUrl: './students.component.html'
 })
-export class StudentsComponent {
+export class StudentsComponent implements OnInit {
   faUserFriends = faUserFriends;
 
   constructor(public studentStore: StudentStoreService) {}
+
+  ngOnInit() {}
 
 }
