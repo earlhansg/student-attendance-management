@@ -14,7 +14,7 @@
                 <td>{{student.idNumber}}</td>
                 <td>{{student.firstName}} {{student.lastName}}</td>
                 <td>{{student.gender}}</td>
-                <td>{{student.section}}</td>
+                <td>{{getSectionName(student.section)?.name}}</td>
             </tr>
         </tbody>
         <!-- end of tbody  -->

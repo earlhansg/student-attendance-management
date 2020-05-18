@@ -1,6 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 import { StudentStoreService } from '@app/dashboard/student/shared/services/student/student-store.service';
+import { SectionStoreService } from '@app/dashboard/student/shared/services/section/section-store.service';
 
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 
@@ -13,7 +14,8 @@ import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 export class StudentsComponent implements OnInit {
   faUserFriends = faUserFriends;
 
-  constructor(public studentStore: StudentStoreService) {}
+  constructor(public studentStore: StudentStoreService,
+              public sectionStore: SectionStoreService) {}
 
   ngOnInit() {}
 

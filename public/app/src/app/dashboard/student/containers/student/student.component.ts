@@ -1,9 +1,4 @@
-import { Component, ChangeDetectionStrategy } from '@angular/core';
-
-import { StudentStoreService } from '@app/dashboard/student/shared/services/student/student-store.service';
-
-import { faUser } from '@fortawesome/free-solid-svg-icons';
-
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-student',
@@ -11,10 +6,10 @@ import { faUser } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./student.component.scss'],
   templateUrl: './student.component.html'
 })
-export class StudentComponent {
+export class StudentComponent implements OnInit {
 
-  faUser = faUser;
+  constructor() {}
 
-  constructor(public studentStore: StudentStoreService) {}
+  ngOnInit() {}
 
 }

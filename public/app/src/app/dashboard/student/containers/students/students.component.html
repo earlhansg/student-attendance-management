@@ -12,10 +12,18 @@
             </div>
             <!-- end of .header  -->
 
+            <div class="mt-2 d-flex flex-row-reverse">
+                <button class="btn btn-sm btn-outline-primary"
+                        routerLink="new">Create New Student</button>
+            </div>
+            <!-- end of .mt-2   -->
+            
             <ng-container 
-                *ngIf="studentStore.students$ | async as students; else loading">
+                *ngIf="studentStore.students$ && sectionStore.sections$; else loading">
                 <!-- Student List  -->
-                <app-student-list [students]="students"></app-student-list>
+                <app-student-list 
+                [students]="studentStore.students$ | async"
+                [sections]="sectionStore.sections$ | async"></app-student-list>
             </ng-container>
 
             <ng-template #loading>

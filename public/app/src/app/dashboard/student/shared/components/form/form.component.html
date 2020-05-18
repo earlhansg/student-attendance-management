@@ -30,11 +30,6 @@
              && (form.get(prop.key).dirty ||
              form.get(prop.key).touched)">
             <div *ngIf="form.get(prop.key).errors.required">You have to provide a value.</div>
-
-            <div *ngIf="form.get(prop.key).errors.min" >
-                You have to provide a value greater or equal to
-                {{ form.get(prop.key).errors.min.min }}
-            </div>
         </div>
         <!-- end of .alert  -->
 
@@ -44,7 +39,9 @@
     </div>
     <!-- end of .form-group  -->
 
-    <ng-content></ng-content>
+    <button type="submit" class="btn btn-outline-primary">
+      {{existing ? 'Update' : 'Submit' }}
+    </button>
     
 </form>
 <!-- end of form  -->

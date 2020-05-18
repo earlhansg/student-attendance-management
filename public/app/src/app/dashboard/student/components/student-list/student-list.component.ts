@@ -12,6 +12,15 @@ export class StudentListComponent {
   @Input()
   students: Student[];
 
+  @Input()
+  sections: Section[];
+
   constructor() {}
+
+  getSectionName(id) {
+    if (this.sections) {
+      return this.sections.filter(section => section.id === parseInt(id, 10))[0];
+    }
+  }
 
 }
