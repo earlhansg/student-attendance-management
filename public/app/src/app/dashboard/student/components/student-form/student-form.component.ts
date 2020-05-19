@@ -1,5 +1,5 @@
-import { Component, ChangeDetectionStrategy, OnInit, Input } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 // Data Form
 import { studentFormData } from '@app/dashboard/student/shared/data';
 // Store
@@ -28,7 +28,6 @@ export class StudentFormComponent implements OnInit {
   student$: Observable<Student>;
 
   constructor(
-    private router: Router,
     private route: ActivatedRoute,
     public studentStore: StudentStoreService,
     private studentService: StudentService) {}
@@ -40,12 +39,10 @@ export class StudentFormComponent implements OnInit {
 
   onsaveFormValues(event) {
     this.studentStore.addStudent(event);
-    this.router.navigate(['dashboard']);
   }
 
   oneditFormValues(event: Student) {
-    // console.log(event);
-    this.studentService.updateStudent(event.id, event);
+    this.studentStore.updateStudent(event);
   }
 
 }

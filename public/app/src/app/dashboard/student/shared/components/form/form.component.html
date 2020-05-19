@@ -38,9 +38,17 @@
 
     </div>
     <!-- end of .form-group  -->
-
+    <!-- btn for Update or Submit  -->
     <button type="submit" class="btn btn-outline-primary">
       {{existing ? 'Update' : 'Submit' }}
+    </button>
+    <!-- btn for Cancel  -->
+    <button class="btn btn-outline-secondary ml-2" [routerLink]="['../']">
+      Cancel
+    </button>
+    <!-- btn for Delete  -->
+    <button *ngIf="existing" class="btn btn-outline-danger ml-2">
+      Delete
     </button>
     
 </form>

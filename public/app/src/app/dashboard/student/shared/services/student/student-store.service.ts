@@ -1,14 +1,19 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject } from 'rxjs';
-
-import { Student } from '@app/dashboard/student/shared/models';
+import { Router } from '@angular/router';
+// Service
 import { StudentService } from '@app/dashboard/student/shared/services/student/student.service';
+// Model
+import { Student } from '@app/dashboard/student/shared/models';
+// RXJS
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({providedIn: 'root'})
 export class StudentStoreService {
 
 
-  constructor(private studentService: StudentService) {
+  constructor(
+    private studentService: StudentService,
+    private router: Router) {
     this.fetchAll();
   }
 
@@ -45,7 +50,7 @@ export class StudentStoreService {
         const student = await this.studentService
           .createStudent(body)
           .toPromise();
-
+        this.router.navigate(['dashboard']);
         // we swap the local student record with the record from the server (id must be updated)
         const index = this.students.indexOf(this.students.find(data => data.idNumber === body.idNumber));
         this.students[index] = {
@@ -60,6 +65,35 @@ export class StudentStoreService {
 
     }
 
+  }
+
+  async updateStudent(body: Student) {
+    const student = this.students.find(data => data.id === body.id);
+    if (student) {
+      const index = this.students.indexOf(student);
+
+      this.students[index] = {
+        ...student,
+        ...body
+      };
+
+      this.students = [...this.students];
+
+      try {
+        await this.studentService
+          .updateStudent(body.id, body)
+          .toPromise();
+        this.router.navigate(['dashboard']);
+      } catch (e) {
+
+        console.log(e);
+        this.students[index] = {
+          ...student
+        };
+
+      }
+      // end of catch
+    }
   }
 
   async removeStudent(idNumber: any, serverRemove = true) {

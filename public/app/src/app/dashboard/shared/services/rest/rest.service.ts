@@ -17,7 +17,7 @@ export abstract class RestService {
     return this.http[method](url, data)
       .pipe(
         catchError(err => throwError(err))
-      );
+    );
   }
 
 }

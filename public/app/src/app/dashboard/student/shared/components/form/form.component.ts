@@ -52,7 +52,6 @@ export class FormComponent implements OnChanges, OnInit {
       this.isExist = true;
       for (const prop of Object.keys(this.existing)) {
         if (prop !== 'id') {
-          console.log('existing', prop);
           this.form.controls[`${prop}`].setValue(this.existing[`${prop}`]);
         }
         // end of if statement

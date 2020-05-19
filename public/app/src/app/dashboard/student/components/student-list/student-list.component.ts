@@ -1,4 +1,6 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Router } from '@angular/router';
+// Models
 import { Student, Section } from '@app/dashboard/student/shared/models';
 
 @Component({
@@ -15,12 +17,16 @@ export class StudentListComponent {
   @Input()
   sections: Section[];
 
-  constructor() {}
+  constructor(private router: Router) {}
 
   getSectionName(id) {
     if (this.sections) {
       return this.sections.filter(section => section.id === parseInt(id, 10))[0];
     }
+  }
+
+  updateStudent(id: number) {
+    this.router.navigateByUrl(`dashboard/students/${id}`);
   }
 
 }

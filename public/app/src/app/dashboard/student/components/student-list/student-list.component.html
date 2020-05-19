@@ -11,10 +11,10 @@
         <!-- end of thead  -->
         <tbody>
             <tr *ngFor="let student of students">
-                <td>{{student.idNumber}}</td>
-                <td>{{student.firstName}} {{student.lastName}}</td>
-                <td>{{student.gender}}</td>
-                <td>{{getSectionName(student.section)?.name}}</td>
+                <td (click)="updateStudent(student.id)">{{student.idNumber}}</td>
+                <td (click)="updateStudent(student.id)">{{student.firstName}} {{student.lastName}}</td>
+                <td (click)="updateStudent(student.id)">{{student.gender}}</td>
+                <td (click)="updateStudent(student.id)">{{getSectionName(student.section)?.name}}</td>
             </tr>
         </tbody>
         <!-- end of tbody  -->
