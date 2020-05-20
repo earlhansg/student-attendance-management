@@ -45,4 +45,8 @@ export class StudentFormComponent implements OnInit {
     this.studentStore.updateStudent(event);
   }
 
+  onremoveFormValues(id: number) {
+    this.studentStore.removeStudent(id);
+  }
+
 }

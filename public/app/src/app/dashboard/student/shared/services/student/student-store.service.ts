@@ -96,14 +96,15 @@ export class StudentStoreService {
     }
   }
 
-  async removeStudent(idNumber: any, serverRemove = true) {
+  async removeStudent(id: any, serverRemove = true) {
     // optimistic update
-    const student = this.students.find(data => data.idNumber === idNumber);
-    this.students = this.students.filter(data => data.idNumber !== idNumber);
+    const student = this.students.find(data => data.id === id);
+    this.students = this.students.filter(data => data.id !== id);
 
     if (serverRemove) {
       try {
-        await this.studentService.removeStudent(idNumber).toPromise();
+        await this.studentService.removeStudent(id).toPromise();
+        this.router.navigate(['dashboard']);
       } catch (e) {
         console.error(e);
         this.students = [...this.students, student];

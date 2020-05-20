@@ -26,37 +26,13 @@
       "section": 1
     },
     {
-      "id": 2,
-      "idNumber": 222567111,
-      "firstName": "Zeus Andrey",
-      "lastName": "Pelin",
-      "gender": "M",
-      "section": "1"
-    },
-    {
-      "id": 3,
-      "idNumber": 23422111,
-      "firstName": "Precious",
-      "lastName": "Genoso",
-      "gender": "F",
-      "section": 2
-    },
-    {
       "id": 4,
       "idNumber": 227892111,
       "firstName": "Kristy",
       "lastName": "Almuete",
       "gender": "F",
       "section": 1
-    },
-    {
-      "idNumber": "89876666",
-      "firstName": "James",
-      "lastName": "Lebron",
-      "gender": "M",
-      "section": "2",
-      "id": 6
-    } 
+    }
   ],
   "sections": [
     {

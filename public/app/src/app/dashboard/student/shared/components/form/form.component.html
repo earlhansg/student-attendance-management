@@ -47,9 +47,15 @@
       Cancel
     </button>
     <!-- btn for Delete  -->
-    <button *ngIf="existing" class="btn btn-outline-danger ml-2">
+    <button *ngIf="existing" 
+            class="btn btn-outline-danger ml-2"
+            (click)="onRemove()">
       Delete
     </button>
+
+    <button type="button" 
+            class="btn btn-primary" 
+            (click)="openModal()">Create template modal</button>
     
 </form>
 <!-- end of form  -->

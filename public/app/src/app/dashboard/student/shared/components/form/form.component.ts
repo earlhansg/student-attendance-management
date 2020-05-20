@@ -2,6 +2,9 @@ import { Component, ChangeDetectionStrategy,
   Input, Output, EventEmitter, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
+import { ConfirmDialogComponent } from '@app/dashboard/shared/components/confirm-dialog/confirm-dialog.component';
+
 @Component({
   selector: 'app-form',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -22,12 +25,17 @@ export class FormComponent implements OnChanges, OnInit {
   @Output()
   editFormValues = new EventEmitter();
 
+  @Output()
+  removeFormValues = new EventEmitter();
+
   form: FormGroup;
   formProps = [];
 
   isExist = false;
 
-  constructor() {}
+  bsModalRef: BsModalRef;
+
+  constructor(private modalService: BsModalService) {}
 
   ngOnInit() {
     const formDataObj = {};
@@ -83,6 +91,18 @@ export class FormComponent implements OnChanges, OnInit {
       // end of inner if statement
     }
     // end of outer if statement
+  }
+
+  onRemove() {
+    this.removeFormValues.emit(this.existing.id);
+  }
+
+  openModal() {
+    this.bsModalRef = this.modalService.show(ConfirmDialogComponent);
+    this.bsModalRef.content.title = 'remove';
+    this.bsModalRef.content.event.subscribe(response => {
+      console.log(response);
+    });
   }
 
 }

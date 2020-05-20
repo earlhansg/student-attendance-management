@@ -13,7 +13,8 @@
   <app-form [dataForm]="studentFormData" 
             [existing]="student$ | async"
             (saveFormValues)="onsaveFormValues($event)"
-            (editFormValues)="oneditFormValues($event)">
+            (editFormValues)="oneditFormValues($event)"
+            (removeFormValues)="onremoveFormValues($event)">
   </app-form>
     
 </div>
