@@ -93,15 +93,21 @@ export class FormComponent implements OnChanges, OnInit {
     // end of outer if statement
   }
 
-  onRemove() {
-    this.removeFormValues.emit(this.existing.id);
-  }
+  // onRemove() {
+  //   this.removeFormValues.emit(this.existing.id);
+  // }
 
   openModal() {
-    this.bsModalRef = this.modalService.show(ConfirmDialogComponent);
+    const initialState = {
+      message: 'remove'
+    };
+    this.bsModalRef = this.modalService.show(ConfirmDialogComponent,
+      { initialState, class: 'modal-sm' });
     this.bsModalRef.content.title = 'remove';
     this.bsModalRef.content.event.subscribe(response => {
-      console.log(response);
+      if (response) {
+        this.removeFormValues.emit(this.existing.id);
+      }
     });
   }
 
