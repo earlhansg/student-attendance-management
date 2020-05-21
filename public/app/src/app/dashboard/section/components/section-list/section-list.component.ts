@@ -15,11 +15,17 @@ import { faTrash, faEdit, faAddressCard } from '@fortawesome/free-solid-svg-icon
 export class SectionListComponent {
   faTrash = faTrash;
   faEdit = faEdit;
-  faAddressCard = faAddressCard;
 
   @Input()
   sections: Section[];
 
+  model = [];
+  isEdit = [false];
+
   constructor(private router: Router) {}
+
+  save(updated) {
+    console.log(updated);
+  }
 
 }

@@ -10,3 +10,15 @@
     border-bottom: 1px solid rgb(165, 163, 163);
 }
 // end of .header 
+
+.section-event {
+    margin-top: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  
+    .section-event {
+        justify-content: center;
+    }
+    // endo of .section-event 
+}

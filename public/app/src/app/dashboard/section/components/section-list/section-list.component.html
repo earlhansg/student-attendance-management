@@ -9,15 +9,46 @@
         </thead>
         <!-- end of thead  -->
         <tbody>
-            <tr *ngFor="let section of sections">
-                <td class="section-name"> {{section.name}} </td>
+            <tr *ngFor="let section of sections; let i = index;">
+
+                    <!-- {{section.name}}
+                    {{section}} -->
+                <td>
+                    <span *ngIf="!this.isEdit[i]"
+                          class="section-name">
+                          {{section.name}} 
+                    </span>
+
+                    <input *ngIf="this.isEdit[i]" 
+                            [(ngModel)]="model[i]"
+                            [placeholder]="section.name"
+                            required>
+                </td>
                 <td class="d-flex justify-content-end">
-                    <span class="icon mr-2">
-                        <fa-icon [icon]="faEdit"></fa-icon>
-                    </span>
-                    <span class="icon mr-2">
-                        <fa-icon [icon]="faTrash"></fa-icon>
-                    </span>
+                    <ng-container *ngIf="!this.isEdit[i]; else event">
+
+                        <span class="icon mr-2"
+                            (click)="this.isEdit[i] = true">
+                            <fa-icon [icon]="faEdit"></fa-icon>
+                        </span>
+                        <!-- end of .icon 1 -->
+                        <span class="icon mr-2">
+                            <fa-icon [icon]="faTrash"></fa-icon>
+                        </span>
+                        <!-- end of .icon 2  -->
+                    </ng-container>
+                    <!-- end of ng-container  -->
+                    <ng-template #event>
+
+                        <button class="btn btn-sm btn-primary"
+                                (click)="save(model[i].valid)"
+                                [class.disabled]="!model[i]">Save</button>
+
+                        <button class="btn btn-sm btn-warning ml-1"
+                                (click)="this.isEdit[i] = false; model[i]=''">Cancel</button>
+
+                    </ng-template>
+                    <!-- end of #event template  -->
                 </td>
                 <!-- end of .d-flex  -->
             </tr>

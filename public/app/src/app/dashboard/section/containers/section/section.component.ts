@@ -14,8 +14,16 @@ import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
 export class SectionComponent implements OnInit {
   faAddressCard = faAddressCard;
 
+  section = '';
+
   constructor(public sectionStore: SectionStoreService) {}
 
   ngOnInit() {}
+
+  addSection() {
+    if (this.section) {
+      this.section = '';
+    }
+  }
 
 }

@@ -12,11 +12,17 @@
             </div>
             <!-- end of .header  -->
 
-            <!-- <div class="mt-2 d-flex flex-row-reverse">
+            <div class="section-event d-flex flex-row-reverse">
                 <button class="btn btn-sm btn-outline-primary"
-                        routerLink="new">Create New Student</button>
-            </div> -->
-            <!-- end of .mt-2   -->
+                        [class.disabled]="!section.valid"
+                        (click)="addSection(section.value)">Create Section</button>
+                <input class="mr-1"
+                       name="section"
+                       placeholder="Enter section ..."
+                       [(ngModel)]="section"
+                       required>
+            </div>
+            <!-- end of .section-event   -->
             
             <ng-container 
                 *ngIf="sectionStore.sections$; else loading">

@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { SectionRoutingModule } from './section-routing.module';
 import { SharedModule } from '@app/dashboard/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 // Components
 import { SectionComponent } from './containers/section/section.component';
 import { SectionListComponent } from './components/section-list/section-list.component';
@@ -16,7 +16,7 @@ import { SectionListComponent } from './components/section-list/section-list.com
     SectionRoutingModule,
     SharedModule,
     FontAwesomeModule,
-    ReactiveFormsModule
+    FormsModule
   ],
   declarations: [
     SectionComponent,
