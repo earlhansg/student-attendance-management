@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { Section } from '@app/dashboard/student/shared/models';
-import { SectionsService } from '@app/dashboard/student/shared/services/section/section.service';
+import { Section } from '@shared/models';
+import { SectionsService } from '@shared/services/section/section.service';
 
 @Injectable({providedIn: 'root'})
 export class SectionStoreService {

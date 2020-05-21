@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 // Service
-import { StudentService } from '@app/dashboard/student/shared/services/student/student.service';
+import { StudentService } from '@shared/services/student/student.service';
 // Model
-import { Student } from '@app/dashboard/student/shared/models';
+import { Student } from '@shared/models';
 // RXJS
 import { BehaviorSubject } from 'rxjs';
 

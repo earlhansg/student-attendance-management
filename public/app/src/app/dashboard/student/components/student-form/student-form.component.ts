@@ -3,14 +3,14 @@ import { ActivatedRoute } from '@angular/router';
 // Data Form
 import { studentFormData } from '@app/dashboard/student/shared/data';
 // Store
-import { StudentStoreService } from '@app/dashboard/student/shared/services/student/student-store.service';
+import { StudentStoreService } from '@shared/services/student/student-store.service';
 // Service
-import { StudentService } from '@app/dashboard/student/shared/services/student/student.service';
+import { StudentService } from '@shared/services/student/student.service';
 // RXJS
 import { Observable } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
 // Model
-import { Student } from '@app/dashboard/student/shared/models';
+import { Student } from '@shared/models';
 // Icon
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 @Component({

@@ -1,5 +1,10 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
+import { SectionStoreService } from '@shared/services/section/section-store.service';
+
+import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
+
+
 @Component({
   selector: 'app-section',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -7,8 +12,9 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
   templateUrl: './section.component.html'
 })
 export class SectionComponent implements OnInit {
+  faAddressCard = faAddressCard;
 
-  constructor() {}
+  constructor(public sectionStore: SectionStoreService) {}
 
   ngOnInit() {}
 

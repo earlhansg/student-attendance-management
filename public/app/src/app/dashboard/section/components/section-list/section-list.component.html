@@ -1,0 +1,28 @@
+<div class="section-list d-flex justify-content-center">
+    <table class="table table-striped">
+        <thead>
+            <tr class="text-center">
+                <th scope="col">Name</th>
+                <th scope="col"></th>
+            </tr>
+            <!-- end of .text-center -->
+        </thead>
+        <!-- end of thead  -->
+        <tbody>
+            <tr *ngFor="let section of sections">
+                <td class="section-name"> {{section.name}} </td>
+                <td class="d-flex justify-content-end">
+                    <span class="icon mr-2">
+                        <fa-icon [icon]="faEdit"></fa-icon>
+                    </span>
+                    <span class="icon mr-2">
+                        <fa-icon [icon]="faTrash"></fa-icon>
+                    </span>
+                </td>
+                <!-- end of .d-flex  -->
+            </tr>
+        </tbody>
+        <!-- end of tbody  -->
+    </table>
+</div>
+<!-- end of .section-list  -->

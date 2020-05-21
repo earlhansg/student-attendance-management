@@ -1,0 +1,44 @@
+.section-list {
+    margin: 1rem 0 1.5rem 0;
+    width: 100%;
+}
+// end of .section-list
+
+.table {
+    width: 85%;
+}
+// end of .table 
+
+.icon {
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover:first-child {
+        color: #007bff !important;
+    }
+
+    &:hover:last-child {
+        color: #dc3545 !important;
+    }
+}
+// end of .icon
+
+.section-name {
+    cursor: pointer;
+    transition: 0.2s;
+
+    &:hover {
+        color: #007bff;
+        text-decoration-color: #007bff;
+        text-decoration-line: underline;
+    }
+}
+// end of .section-name 
+
+@media (max-width: 768px) {
+  
+    .table {
+        width: 90%;
+    }
+    // endo of .table 
+}

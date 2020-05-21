@@ -3,7 +3,7 @@ import { Component, ChangeDetectionStrategy,
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
-import { ConfirmDialogComponent } from '@app/dashboard/shared/components/confirm-dialog/confirm-dialog.component';
+import { ConfirmDialogComponent } from '@shared/components/confirm-dialog/confirm-dialog.component';
 
 @Component({
   selector: 'app-form',
@@ -92,10 +92,6 @@ export class FormComponent implements OnChanges, OnInit {
     }
     // end of outer if statement
   }
-
-  // onRemove() {
-  //   this.removeFormValues.emit(this.existing.id);
-  // }
 
   openModal() {
     const initialState = {

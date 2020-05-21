@@ -6,8 +6,8 @@ import { SharedModule } from '@app/dashboard/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ReactiveFormsModule } from '@angular/forms';
 // Components
-import { SectionComponent } from './container/section.component';
-// Services
+import { SectionComponent } from './containers/section/section.component';
+import { SectionListComponent } from './components/section-list/section-list.component';
 
 
 @NgModule({
@@ -19,7 +19,8 @@ import { SectionComponent } from './container/section.component';
     ReactiveFormsModule
   ],
   declarations: [
-    SectionComponent
+    SectionComponent,
+    SectionListComponent
   ],
   providers: []
 })

@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
-import { StudentStoreService } from '@app/dashboard/student/shared/services/student/student-store.service';
-import { SectionStoreService } from '@app/dashboard/student/shared/services/section/section-store.service';
+import { StudentStoreService } from '@shared/services/student/student-store.service';
+import { SectionStoreService } from '@shared/services/section/section-store.service';
 
 import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 

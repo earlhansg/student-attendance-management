@@ -1,7 +1,7 @@
 import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
 import { Router } from '@angular/router';
 // Models
-import { Student, Section } from '@app/dashboard/student/shared/models';
+import { Student, Section } from '@shared/models';
 
 @Component({
   selector: 'app-student-list',

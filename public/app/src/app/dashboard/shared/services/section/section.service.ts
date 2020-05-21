@@ -1,11 +1,11 @@
 import { Inject, Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-import { RestService } from '@app/dashboard/shared/services/rest/rest.service';
+import { RestService } from '@shared/services/rest/rest.service';
 
-import { HttpMethodEnum } from '@app/dashboard/shared/enums';
+import { HttpMethodEnum } from '@shared/enums';
 
-import { Section } from '@app/dashboard/student/shared/models';
+import { Section } from '@shared/models';
 
 import { Observable } from 'rxjs';
 
