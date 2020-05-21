@@ -5,6 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { StudentModule } from './student/student.module';
+import { SectionModule } from './section/section.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
 // Components
 import { DashboardComponent } from '@app/dashboard/container/dashboard.component';
@@ -18,6 +19,7 @@ import { ConfirmDialogComponent } from '@app/dashboard/shared/components/confirm
     DashboardRoutingModule,
     SharedModule,
     StudentModule,
+    SectionModule,
     ModalModule.forRoot()
   ],
   declarations: [

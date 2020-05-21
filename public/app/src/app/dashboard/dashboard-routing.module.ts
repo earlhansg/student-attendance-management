@@ -19,6 +19,11 @@ export const ROUTES: Routes = [
         redirectTo: 'students',
         pathMatch: 'full'
       },
+      {
+        path: 'section',
+        loadChildren: () => import('./section/section.module')
+        .then(mod => mod.SectionModule)
+      }
     ]
   }
 ];
