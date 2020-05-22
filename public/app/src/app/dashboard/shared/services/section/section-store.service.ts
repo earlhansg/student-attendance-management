@@ -29,17 +29,18 @@ export class SectionStoreService {
     this.SECTIONS.next(val);
   }
 
-  async addSection(body: Section) {
+  async addSection(body: any) {
 
     if (body) {
 
-      // const dbId = 100;
-      const newSection = {...body};
+      const newSection = body;
 
       this.sections = [
         ...this.sections,
         newSection
       ];
+
+      console.log('list of sections', this.sections);
 
       try {
         const section = await this.sectionService

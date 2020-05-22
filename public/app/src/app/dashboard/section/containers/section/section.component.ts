@@ -22,6 +22,8 @@ export class SectionComponent implements OnInit {
 
   addSection() {
     if (this.section) {
+      const name = this.section;
+      this.sectionStore.addSection({ name });
       this.section = '';
     }
   }

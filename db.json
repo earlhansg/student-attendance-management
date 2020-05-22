@@ -42,6 +42,14 @@
     {
       "id": 2,
       "name": "Bonifacio"
+    },
+    {
+      "name": "Mabini",
+      "id": 3
+    },
+    {
+      "name": "Macapagal",
+      "id": 4
     }
   ]
 }
