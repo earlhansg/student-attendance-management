@@ -30,7 +30,8 @@
                             <fa-icon [icon]="faEdit"></fa-icon>
                         </span>
                         <!-- end of .icon 1 -->
-                        <span class="icon mr-2">
+                        <span class="icon mr-2"
+                              (click)="openModal(section.id)">
                             <fa-icon [icon]="faTrash"></fa-icon>
                         </span>
                         <!-- end of .icon 2  -->

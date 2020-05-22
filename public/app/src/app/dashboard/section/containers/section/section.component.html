@@ -29,7 +29,8 @@
                 <!-- Section List  -->
                 <app-section-list
                 [sections]="sectionStore.sections$ | async"
-                (update)="onUpdate($event)"></app-section-list>
+                (update)="onUpdate($event)"
+                (remove)="onRemove($event)"></app-section-list>
             </ng-container>
 
             <ng-template #loading>

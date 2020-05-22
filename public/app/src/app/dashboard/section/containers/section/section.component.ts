@@ -32,4 +32,8 @@ export class SectionComponent implements OnInit {
     this.sectionStore.updateSection(event);
   }
 
+  onRemove(event) {
+    this.sectionStore.removeSection(event);
+  }
+
 }
