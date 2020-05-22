@@ -63,6 +63,35 @@ export class SectionStoreService {
 
   }
 
+  async updateSection(body: Section) {
+    const section = this.sections.find(data => data.id === body.id);
+
+    if (section) {
+      const index = this.sections.indexOf(section);
+
+      this.sections[index] = {
+        ...section,
+        ...body
+      };
+
+      this.sections = [...this.sections];
+
+      try {
+        await this.sectionService
+        .updateSection(body.id, body)
+        .toPromise();
+      } catch (e) {
+
+        console.log(e);
+        this.sections[index] = {
+          ...section
+        };
+
+      }
+      // end of catch
+    }
+  }
+
   async removeSection(id: any, serverRemove = true) {
     // optimistic update
     const section = this.sections.find(data => data.id === id);

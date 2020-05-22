@@ -28,4 +28,8 @@ export class SectionComponent implements OnInit {
     }
   }
 
+  onUpdate(event) {
+    this.sectionStore.updateSection(event);
+  }
+
 }

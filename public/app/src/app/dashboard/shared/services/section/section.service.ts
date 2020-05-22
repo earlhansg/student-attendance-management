@@ -17,19 +17,19 @@ export class SectionsService extends RestService {
              @Inject('API_URL') protected baseUrl: string) { super(http, baseUrl); }
 
  getSections(): Observable<Section[]> {
-    return this.request(this.url, HttpMethodEnum.GET);
+   return this.request(this.url, HttpMethodEnum.GET);
  }
 
  createSection(body: Section) {
-    return this.request(this.url, HttpMethodEnum.POST, body);
+   return this.request(this.url, HttpMethodEnum.POST, body);
  }
 
  updateSection(id: number, body: Section): Observable<Section> {
-    return this.request(`${this.url}?id=${id}`, HttpMethodEnum.PATCH, body);
+   return this.request(`${this.url}/${id}`, HttpMethodEnum.PATCH, body);
  }
 
  removeSection(id: number) {
-    return this.request(`${this.url}?id=${id}`, HttpMethodEnum.DEL);
+   return this.request(`${this.url}/${id}`, HttpMethodEnum.DEL);
  }
 
 }

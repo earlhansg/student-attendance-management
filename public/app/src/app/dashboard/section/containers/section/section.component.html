@@ -28,7 +28,8 @@
                 *ngIf="sectionStore.sections$; else loading">
                 <!-- Section List  -->
                 <app-section-list
-                [sections]="sectionStore.sections$ | async"></app-section-list>
+                [sections]="sectionStore.sections$ | async"
+                (update)="onUpdate($event)"></app-section-list>
             </ng-container>
 
             <ng-template #loading>

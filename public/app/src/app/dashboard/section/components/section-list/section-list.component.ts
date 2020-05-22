@@ -1,4 +1,4 @@
-import { Component, ChangeDetectionStrategy, Input } from '@angular/core';
+import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core';
 import { Router } from '@angular/router';
 // Models
 import { Section } from '@shared/models';
@@ -19,13 +19,16 @@ export class SectionListComponent {
   @Input()
   sections: Section[];
 
+  @Output()
+  update =  new EventEmitter();
+
   model = [];
   isEdit = [false];
 
   constructor(private router: Router) {}
 
-  save(updated) {
-    console.log(updated);
+  save(id, name) {
+    this.update.emit({id, name});
   }
 
 }

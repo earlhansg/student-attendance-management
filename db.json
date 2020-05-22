@@ -20,7 +20,7 @@
     {
       "id": 1,
       "idNumber": 22222111,
-      "firstName": "Earl Hans",
+      "firstName": "Earl",
       "lastName": "Genoso",
       "gender": "M",
       "section": 1
@@ -28,7 +28,7 @@
     {
       "id": 4,
       "idNumber": 227892111,
-      "firstName": "Kristy",
+      "firstName": "Kristy Mae",
       "lastName": "Almuete",
       "gender": "F",
       "section": 1
@@ -44,11 +44,11 @@
       "name": "Bonifacio"
     },
     {
-      "name": "Mabini",
+      "name": "Aguinaldo",
       "id": 3
     },
     {
-      "name": "Macapagal",
+      "name": "Silang",
       "id": 4
     }
   ]

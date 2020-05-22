@@ -11,8 +11,6 @@
         <tbody>
             <tr *ngFor="let section of sections; let i = index;">
 
-                    <!-- {{section.name}}
-                    {{section}} -->
                 <td>
                     <span *ngIf="!this.isEdit[i]"
                           class="section-name">
@@ -41,7 +39,7 @@
                     <ng-template #event>
 
                         <button class="btn btn-sm btn-primary"
-                                (click)="save(model[i].valid)"
+                                (click)="save(section.id, model[i]); this.isEdit[i] = false"
                                 [class.disabled]="!model[i]">Save</button>
 
                         <button class="btn btn-sm btn-warning ml-1"
