@@ -9,6 +9,7 @@ import { FormsModule } from '@angular/forms';
 import { SectionsComponent } from './containers/sections/sections.component';
 import { SectionComponent } from './containers/section/section.component';
 import { SectionListComponent } from './components/section-list/section-list.component';
+import { StudentComponent } from './containers/student/student.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { SectionListComponent } from './components/section-list/section-list.com
   declarations: [
     SectionsComponent,
     SectionComponent,
-    SectionListComponent
+    SectionListComponent,
+    StudentComponent
   ],
   providers: []
 })
