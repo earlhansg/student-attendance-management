@@ -10,6 +10,9 @@ import { SectionsComponent } from './containers/sections/sections.component';
 import { SectionComponent } from './containers/section/section.component';
 import { SectionListComponent } from './components/section-list/section-list.component';
 import { StudentComponent } from './containers/student/student.component';
+import { TableComponent } from './shared/components/table/table.component';
+// Pipe
+import { GenderPipe } from './shared/pipe/gender.pipe';
 
 
 @NgModule({
@@ -24,7 +27,9 @@ import { StudentComponent } from './containers/student/student.component';
     SectionsComponent,
     SectionComponent,
     SectionListComponent,
-    StudentComponent
+    StudentComponent,
+    TableComponent,
+    GenderPipe
   ],
   providers: []
 })

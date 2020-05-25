@@ -1,0 +1,35 @@
+<div class="container">
+
+    <div class="row justify-content-md-center">
+
+        <div class="col-md-11 col-sm-12" id="section">
+            <div class="header">
+                <span class="header__content">
+                    <fa-icon [icon]="faAddressCard"></fa-icon>
+                    {{ (section$ | async)?.name }}
+                </span>
+                <!-- end of .header__content  -->
+            </div>
+            <!-- end of .header  -->
+
+            <div class="body">
+                <ng-container *ngIf="this.students$ | async">
+                    <app-table [type]="'M'" [students]="this.students$ | async"></app-table>
+                    <app-table [type]="'F'" [students]="this.students$ | async"></app-table>
+                </ng-container>
+            </div>
+            <!-- end of .body  -->
+
+            <ng-template #loading>
+                <div class="message">
+                    <img src="/assets/images/loading.svg">
+                    Fetching section...
+                </div>
+            </ng-template>
+            
+        </div>
+        <!-- end of .col-md-11   -->
+    </div>
+    <!-- end of .row  -->
+</div>
+<!-- end of .container  -->

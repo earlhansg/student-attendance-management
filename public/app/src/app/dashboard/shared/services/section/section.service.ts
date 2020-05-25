@@ -20,6 +20,10 @@ export class SectionsService extends RestService {
    return this.request(this.url, HttpMethodEnum.GET);
  }
 
+ getSectionsById(id: number): Observable<Section> {
+  return this.request(`${this.url}/${id}`, HttpMethodEnum.GET);
+ }
+
  createSection(body: Section) {
    return this.request(this.url, HttpMethodEnum.POST, body);
  }
@@ -28,7 +32,7 @@ export class SectionsService extends RestService {
    return this.request(`${this.url}/${id}`, HttpMethodEnum.PATCH, body);
  }
 
- removeSection(id: number) {
+ removeSection(id: number): Observable<Section> {
    return this.request(`${this.url}/${id}`, HttpMethodEnum.DEL);
  }
 

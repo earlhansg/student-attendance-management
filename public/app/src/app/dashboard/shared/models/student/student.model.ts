@@ -4,5 +4,5 @@ export interface Student {
     firstName: string;
     lastName: string;
     gender: string;
-    section: string;
+    section: number;
 }

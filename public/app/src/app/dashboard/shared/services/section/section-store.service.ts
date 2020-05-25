@@ -3,6 +3,7 @@ import { BehaviorSubject } from 'rxjs';
 
 import { Section } from '@shared/models';
 import { SectionsService } from '@shared/services/section/section.service';
+import { map } from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class SectionStoreService {
@@ -110,6 +111,10 @@ export class SectionStoreService {
 
   async fetchAll() {
     this.sections = await this.sectionService.getSections().toPromise();
+  }
+
+  async getSection(paramID: number) {
+    return this.sectionService.getSectionsById(paramID).toPromise();
   }
 
 }

@@ -5,7 +5,8 @@ import { StudentService } from '@shared/services/student/student.service';
 // Model
 import { Student } from '@shared/models';
 // RXJS
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { map, filter } from 'rxjs/operators';
 
 @Injectable({providedIn: 'root'})
 export class StudentStoreService {
@@ -115,6 +116,14 @@ export class StudentStoreService {
 
   async fetchAll() {
     this.students = await this.studentService.getStudents().toPromise();
+  }
+
+  getSectionById(paramId): Observable<Student[]> {
+    if (paramId) {
+      return this.students$.pipe(
+        map(students => students.filter(student => student.section === parseInt(paramId, 10)))
+      );
+    }
   }
 
 }

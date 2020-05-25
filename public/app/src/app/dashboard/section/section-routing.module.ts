@@ -7,8 +7,8 @@ import { StudentComponent } from './containers/student/student.component';
 
 export const ROUTES: Routes = [
   { path: '', component:  SectionsComponent },
-  { path: ':id', component:  SectionComponent },
-  { path: ':id', component:  StudentComponent }
+  { path: ':id', component:  SectionComponent},
+  { path: 'student/:id', component:  StudentComponent}
 ];
 
 

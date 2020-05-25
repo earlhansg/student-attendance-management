@@ -13,7 +13,8 @@
 
                 <td>
                     <span *ngIf="!this.isEdit[i]"
-                          class="section-name">
+                          class="section-name"
+                          [routerLink]="section.id">
                           {{section.name}} 
                     </span>
 
