@@ -11,6 +11,7 @@ import { SectionComponent } from './containers/section/section.component';
 import { SectionListComponent } from './components/section-list/section-list.component';
 import { StudentComponent } from './containers/student/student.component';
 import { TableComponent } from './shared/components/table/table.component';
+import { AttendanceComponent } from './components/attendance/attendance.component';
 // Pipe
 import { GenderPipe } from './shared/pipe/gender.pipe';
 
@@ -29,7 +30,8 @@ import { GenderPipe } from './shared/pipe/gender.pipe';
     SectionListComponent,
     StudentComponent,
     TableComponent,
-    GenderPipe
+    GenderPipe,
+    AttendanceComponent
   ],
   providers: []
 })

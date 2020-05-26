@@ -43,5 +43,95 @@
       "id": 2,
       "name": "Bonifacio"
     }
+  ],
+  "attendace": [
+    {
+      "id": 1,
+      "date": "2020-05-01T23:28:56.782Z",
+      "students": [
+        {
+          "id": 1,
+          "idNumber": 22222111,
+          "firstName": "Earl",
+          "lastName": "Genoso",
+          "gender": "M",
+          "section": 1
+        },
+        {
+          "id": 4,
+          "idNumber": 227892111,
+          "firstName": "Kristy Mae",
+          "lastName": "Almuete",
+          "gender": "F",
+          "section": 1
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "date": "2020-05-02T23:28:56.782Z",
+      "students": [
+        {
+          "id": 1,
+          "idNumber": 22222111,
+          "firstName": "Earl",
+          "lastName": "Genoso",
+          "gender": "M",
+          "section": 1
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "date": "2020-05-03T23:28:56.782Z",
+      "students": [
+        {
+          "id": 4,
+          "idNumber": 227892111,
+          "firstName": "Kristy Mae",
+          "lastName": "Almuete",
+          "gender": "F",
+          "section": 1
+        }
+      ]
+    }
+  ],
+  "attendanceByStudent": [
+    {
+      "id": 1,
+      "idNumber": 22222111,
+      "firstName": "Earl",
+      "lastName": "Genoso",
+      "gender": "M",
+      "section": 1,
+      "attendance": [
+        {
+          "id": 1,
+          "date": "2020-05-01T23:28:56.782Z"
+        },
+        {
+          "id": 2,
+          "date": "2020-05-02T23:28:56.782Z"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "idNumber": 227892111,
+      "firstName": "Kristy Mae",
+      "lastName": "Almuete",
+      "gender": "F",
+      "section": 1,
+      "attendance": [
+        {
+          "id": 2,
+          "date": "2020-05-02T23:28:56.782Z"
+        },
+        {
+          "id": 3,
+          "date": "2020-05-02T23:28:56.782Z"
+        }
+      ]  
+    }
   ]
 }

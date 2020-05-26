@@ -1,0 +1,22 @@
+#profile {
+    margin: 1rem 0 1rem 0;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    height: 85vh;
+    overflow: auto;
+}
+
+.profile {
+    margin: 1rem 0 1rem 0;
+    &__icon {
+        min-height: 80px;
+        min-width: 95px;
+        background-color: rgb(231, 226, 226);
+
+        fa-icon {
+            font-size: 45px !important;
+        }
+    }
+    &__info {
+        margin: 0 0 0 0.5rem;
+    }
+}
