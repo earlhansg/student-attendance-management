@@ -44,7 +44,7 @@
       "name": "Bonifacio"
     }
   ],
-  "attendace": [
+  "attendance": [
     {
       "id": 1,
       "date": "2020-05-01T23:28:56.782Z",
@@ -55,7 +55,8 @@
           "firstName": "Earl",
           "lastName": "Genoso",
           "gender": "M",
-          "section": 1
+          "section": 1,
+          "status": true
         },
         {
           "id": 4,
@@ -63,7 +64,7 @@
           "firstName": "Kristy Mae",
           "lastName": "Almuete",
           "gender": "F",
-          "section": 1
+          "status": true
         }
       ]
     },
@@ -77,7 +78,17 @@
           "firstName": "Earl",
           "lastName": "Genoso",
           "gender": "M",
-          "section": 1
+          "section": 1,
+          "status": true
+        },
+        {
+          "id": 4,
+          "idNumber": 227892111,
+          "firstName": "Kristy Mae",
+          "lastName": "Almuete",
+          "gender": "F",
+          "section": 1,
+          "status": false
         }
       ]
     },
@@ -91,11 +102,22 @@
           "firstName": "Kristy Mae",
           "lastName": "Almuete",
           "gender": "F",
-          "section": 1
+          "section": 1,
+          "status": true
+        },
+        {
+          "id": 1,
+          "idNumber": 22222111,
+          "firstName": "Earl",
+          "lastName": "Genoso",
+          "gender": "M",
+          "section": 1,
+          "status": false
         }
       ]
     }
   ],
+
   "attendanceByStudent": [
     {
       "id": 1,
@@ -107,11 +129,28 @@
       "attendance": [
         {
           "id": 1,
-          "date": "2020-05-01T23:28:56.782Z"
+          "date": "2020-05-01T23:28:56.782Z",
+          "status": true
         },
         {
           "id": 2,
-          "date": "2020-05-02T23:28:56.782Z"
+          "date": "2020-05-02T23:28:56.782Z",
+          "status": true
+        },
+        {
+          "id": 3,
+          "date": "2020-05-03T23:28:56.782Z",
+          "status": false
+        },
+        {
+          "id": 4,
+          "date": "2020-01-03T23:28:56.782Z",
+          "status": false
+        },
+        {
+          "id": 5,
+          "date": "2020-01-08T23:28:56.782Z",
+          "status": false
         }
       ]
     },
@@ -124,12 +163,19 @@
       "section": 1,
       "attendance": [
         {
+          "id": 1,
+          "date": "2020-05-01T23:28:56.782Z",
+          "status": true
+        },
+        {
           "id": 2,
-          "date": "2020-05-02T23:28:56.782Z"
+          "date": "2020-05-02T23:28:56.782Z",
+          "status": false
         },
         {
           "id": 3,
-          "date": "2020-05-02T23:28:56.782Z"
+          "date": "2020-05-03T23:28:56.782Z",
+          "status": true
         }
       ]  
     }

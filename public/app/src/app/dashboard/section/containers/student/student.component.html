@@ -1,30 +1,43 @@
 <div class="container">
+
     <div class="row justify-content-md-center">
+
         <div class="col-md-11 col-sm-12" id="profile">
+
             <div class="profile d-flex justify-content-start">
+
                 <span class="profile__icon d-flex justify-content-center align-items-center">
                     <fa-icon [icon]="faUser"></fa-icon>
                 </span>
                 <!-- end of .profile__icon  -->
-                <div class="profile__info d-flex flex-column">
-                    <span>Earl Hans Genoso</span>
-                    <span>ID Number: 11111111</span>
-                    <span>Male</span>
-                    <span>Rizal</span>
+
+                <div class="profile__info d-flex flex-column" *ngIf="(student$ | async) as student">
+                    <span>{{student.firstName}} {{student.lastName}}</span>
+                    <span>ID Number: {{student.idNumber}}</span>
+                    <span>{{student.gender === 'M' ? 'Male' : 'Female'}}</span>
+                    <span *ngIf="(sectionStore.sections$ | async) as sections">
+                        {{sectionName(sections, student.section)}}
+                    </span>
                 </div>
                 <!-- end of .profile__info  -->
             </div>
             <!-- end of .profile  -->
-            <!-- app-attendance   -->
-            <ng-container *ngFor="let month of months">
-                <app-attendance 
-                    [month]="month.type"
-                    [numberOfDays]="month.days"></app-attendance>
+
+            <ng-container *ngIf="(student$ | async) as student">
+                <!-- app-attendance   -->
+                <ng-container *ngFor="let month of months">
+                    <app-attendance 
+                        [month]="month.type"
+                        [numberOfDays]="month.days"
+                        [attendance]="student.attendance"></app-attendance>
+                </ng-container>
+            
             </ng-container>
-        
+            
         </div>
         <!-- end of #profile  -->
+    
     </div>
-    <!-- end of .container  -->
+    <!-- end of .row  -->
+
 </div>
-<!-- <app-attendance></app-attendance> -->

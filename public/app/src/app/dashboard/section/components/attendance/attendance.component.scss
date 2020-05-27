@@ -8,8 +8,14 @@
     }
 }
 
-// .icon-container {
-//     span {
-//         padding: paddi
-//     }
-// }
+.present {
+    fa-icon {
+        color: rgb(48, 201, 48);
+    }
+}
+
+.absent {
+    fa-icon {
+        color: rgb(212, 71, 71);
+    }
+}

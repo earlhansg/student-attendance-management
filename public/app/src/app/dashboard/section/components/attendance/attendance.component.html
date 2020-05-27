@@ -1,6 +1,7 @@
 
 <div id="attendance">
     <label>{{month}}</label>
+
     <table class="table table-hover">
         <thead>
             <tr>
@@ -9,12 +10,28 @@
                 </ng-container>
             </tr>
         </thead>
+        <!-- end of thead  -->
         <tbody>
-            <tr>
-                <ng-container *ngFor="let day of days">
-                    <th scope="col">x</th>
-                </ng-container>
-            </tr>
+            <ng-container *ngIf="displayAttendanceByMonth.length; else empty">
+                <tr>
+                    <ng-container *ngFor="let day of displayAttendanceByMonth">
+                        <th class="present" *ngIf="day.present && day.present !== 'restday'">
+                            <fa-icon [icon]="faCheck"></fa-icon>
+                        </th>
+                        <th class="absent" *ngIf="!day.present">
+                            <fa-icon [icon]="faTimes"></fa-icon>
+                        </th>
+                        <th *ngIf="day.present === 'restday'"> </th>
+                    </ng-container>
+                </tr>
+            </ng-container>
+
+            <!-- render this if no data in this month  -->
+            <ng-template #empty>
+                <p class="font-italic">No data.</p>
+            </ng-template>
         </tbody>
+        <!-- end of tbody  -->
     </table>
+    <!-- end of .table  -->
 </div>

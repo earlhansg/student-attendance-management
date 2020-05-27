@@ -14,8 +14,9 @@ import { faUserFriends } from '@fortawesome/free-solid-svg-icons';
 export class StudentsComponent implements OnInit {
   faUserFriends = faUserFriends;
 
-  constructor(public studentStore: StudentStoreService,
-              public sectionStore: SectionStoreService) {}
+  constructor(
+    public studentStore: StudentStoreService,
+    public sectionStore: SectionStoreService) {}
 
   ngOnInit() {}
 
