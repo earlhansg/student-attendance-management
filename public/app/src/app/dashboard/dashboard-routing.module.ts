@@ -23,6 +23,11 @@ export const ROUTES: Routes = [
         path: 'section',
         loadChildren: () => import('./section/section.module')
         .then(mod => mod.SectionModule)
+      },
+      {
+        path: 'attendance',
+        loadChildren: () => import('./attendance/attendance.module')
+        .then(mod => mod.AttendanceModule)
       }
     ]
   }
