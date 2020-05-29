@@ -4,6 +4,10 @@ import { CommonModule } from '@angular/common';
 import { AttendanceRoutingModule } from './attendance-routing.module';
 import { SharedModule } from '@app/dashboard/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+// Components
+import { AttendancesComponent } from './containers/attendances/attendances.component';
+import { AttendanceComponent } from './containers/attendance/attendance.component';
+
 
 
 @NgModule({
@@ -13,6 +17,9 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
     SharedModule,
     FontAwesomeModule
   ],
-  declarations: []
+  declarations: [
+    AttendancesComponent,
+    AttendanceComponent
+  ]
 })
 export class AttendanceModule { }
