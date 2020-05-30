@@ -1,3 +1,4 @@
+import { Student } from '@app/dashboard/shared/models';
 
 export interface Attendance {
     id: number;
@@ -13,4 +14,16 @@ export interface StudentAttendance {
     gender: string;
     section: number;
     attendance: Attendance[];
+}
+
+export interface Present {
+    status: boolean;
+}
+
+export type StudentByAttendance = Student & Present;
+
+export interface ClassAttendance {
+    id: number;
+    date: string;
+    students: StudentByAttendance[];
 }
