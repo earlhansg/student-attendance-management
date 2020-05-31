@@ -25,5 +25,11 @@ export type StudentByAttendance = Student & Present;
 export interface ClassAttendance {
     id: number;
     date: string;
+    sectionId: number;
     students: StudentByAttendance[];
+}
+
+export interface AttendanceByMonth {
+    sectionId: number;
+    averageByMonth: number[];
 }

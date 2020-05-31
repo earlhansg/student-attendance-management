@@ -7,6 +7,11 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 // Components
 import { AttendancesComponent } from './containers/attendances/attendances.component';
 import { AttendanceComponent } from './containers/attendance/attendance.component';
+import { LineGraphComponent } from './components/line-graph/line-graph.component';
+// Bootstrap
+import { TabsModule } from 'ngx-bootstrap/tabs';
+// Chart
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -15,11 +20,14 @@ import { AttendanceComponent } from './containers/attendance/attendance.componen
     CommonModule,
     AttendanceRoutingModule,
     SharedModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TabsModule.forRoot(),
+    ChartsModule
   ],
   declarations: [
     AttendancesComponent,
-    AttendanceComponent
+    AttendanceComponent,
+    LineGraphComponent
   ]
 })
 export class AttendanceModule { }
