@@ -22,8 +22,9 @@ export class LineGraphComponent implements OnChanges {
 
   lineChartColors: Color[] = [
     {
-      borderColor: 'black',
-      backgroundColor: 'rgba(255,255,0,0.28)',
+      borderColor: '#104a62',
+      backgroundColor: '#e9f8fe',
+      borderWidth: 1.5
     },
   ];
 
@@ -36,7 +37,7 @@ export class LineGraphComponent implements OnChanges {
   ngOnChanges(changes: SimpleChanges): void {
     if (this.sectionId) {
       this.lineChartData = [
-        { data: this.sectionId, label: 'Attendance Average' },
+        { data: this.sectionId, label: 'Average' },
       ];
       this.lineChartLabels = ['January', 'February', 'March', 'April', 'May', 'June',
         'July', 'August', 'September', 'October', 'November', 'December'];

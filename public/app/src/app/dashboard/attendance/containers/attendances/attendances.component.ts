@@ -2,9 +2,12 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 // Service
 import { SectionStoreService } from '@shared/services/section/section-store.service';
 import { AttendanceMonthlyService } from '@shared/services/attendance/attendance-monthly.service';
+// Model
+import { AttendanceByMonth } from '@app/dashboard/shared/models';
+// RXJS
+import { Observable } from 'rxjs';
 // Icon
 import { faFileSignature } from '@fortawesome/free-solid-svg-icons';
-import { AttendanceByMonth } from '@app/dashboard/shared/models';
 
 
 @Component({
@@ -16,20 +19,21 @@ import { AttendanceByMonth } from '@app/dashboard/shared/models';
 export class AttendancesComponent implements OnInit {
   faFileSignature = faFileSignature;
 
-  monthData: AttendanceByMonth[] = [];
+  monthData: Observable<AttendanceByMonth[]>;
 
   constructor(
     public sectionStore: SectionStoreService,
     private attendanceMonthlyService: AttendanceMonthlyService) {}
 
   ngOnInit() {
-    this.attendanceMonthlyService.getAttendanceByMonth()
-      .subscribe(data => this.monthData = data);
+    this.monthData = this.attendanceMonthlyService.getAttendanceByMonth();
   }
 
-  filteredBySection(sectionId) {
-    if (sectionId) {
-      return this.monthData.filter(item => item.sectionId === sectionId)[0].averageByMonth;
+  filteredBySection(monthData: AttendanceByMonth[], sectionId: number) {
+    if (monthData && sectionId) {
+      return monthData.filter(item => item.sectionId === sectionId)[0].averageByMonth;
+    } else {
+      return [ null ];
     }
   }
 

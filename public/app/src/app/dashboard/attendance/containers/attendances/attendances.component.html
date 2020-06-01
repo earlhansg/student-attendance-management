@@ -12,17 +12,19 @@
             </div>
             <!-- end of .header  -->
 
-            <!-- tabs  -->
-            <div class="mt-2" *ngIf="sectionStore.sections$; else loading">
-                <tabset>
-                    <tab *ngFor="let section of (sectionStore.sections$ | async) as sections"
-                        [heading]="section.name">
-                        <!-- line-graph  -->
-                        <app-line-graph [sectionId]="filteredBySection(section?.id)"></app-line-graph>
-                    </tab>
-                </tabset>
-            </div>
-            <!-- end of tabs  -->
+            <ng-container *ngIf="(monthData | async) as data">
+                <!-- tabs  -->
+                <div class="mt-2" *ngIf="sectionStore.sections$">
+                    <tabset>
+                        <tab *ngFor="let section of (sectionStore.sections$ | async) as sections"
+                            [heading]="section.name">
+                            <!-- line-graph  -->
+                            <app-line-graph [sectionId]="filteredBySection(data, section?.id)"></app-line-graph>
+                        </tab>
+                    </tabset>
+                </div>
+                <!-- end of tabs  -->
+            </ng-container>
             
             <ng-template #loading>
                 <div class="message">
