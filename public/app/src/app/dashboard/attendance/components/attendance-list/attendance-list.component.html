@@ -1,0 +1,28 @@
+<div class="attendance-list">
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">Transaction ID</th>
+                <th scope="col">Date</th>
+                <th scope="col">Section</th>
+            </tr>
+        </thead>
+        <!-- end of thead  -->
+        <ng-container *ngIf="attendance.length; else noAttendance">
+            <tbody>
+                <tr *ngFor="let list of attendance">
+                    <td>{{list.id}}</td>
+                    <td>{{list.date | date: 'fullDate'}}</td>
+                    <td>{{sectionName}}</td>
+                </tr>
+            </tbody>
+            <!-- end of tbody  -->
+        </ng-container>
+        
+        <ng-template #noAttendance>
+            <p class="font-italic mt-2">No record ...</p>
+        </ng-template>
+        <!-- end of noAttendance template  -->
+    </table>
+</div>
+<!-- end of .student-list  -->

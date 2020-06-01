@@ -119,7 +119,7 @@ export class AttendanceStoreService {
   getAttendanceById(paramId): Observable<ClassAttendance[]> {
     if (paramId) {
       return this.attendance$.pipe(
-        map(attendance => attendance.filter(item => item.id === parseInt(paramId, 10)))
+        map(attendance => attendance.filter(item => item.sectionId === parseInt(paramId, 10)))
       );
     }
   }

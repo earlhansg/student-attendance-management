@@ -12,14 +12,19 @@
             </div>
             <!-- end of .header  -->
 
-            <ng-container *ngIf="(monthData | async) as data">
+            <ng-container *ngIf="(monthData | async) as data; else loading">
                 <!-- tabs  -->
-                <div class="mt-2" *ngIf="sectionStore.sections$">
+                <div class="mt-2" *ngIf="sectionStore.sections$ && attendanceStore.attendance$">
                     <tabset>
                         <tab *ngFor="let section of (sectionStore.sections$ | async) as sections"
                             [heading]="section.name">
                             <!-- line-graph  -->
                             <app-line-graph [sectionId]="filteredBySection(data, section?.id)"></app-line-graph>
+                            <!-- attendance-list  -->
+                            <app-attendance-list
+                                [sectionName]="section.name"
+                                [attendance]="(attendanceStore.getAttendanceById(section?.id) | async)">
+                            </app-attendance-list>
                         </tab>
                     </tabset>
                 </div>
@@ -29,9 +34,10 @@
             <ng-template #loading>
                 <div class="message">
                     <img src="/assets/images/loading.svg">
-                    Fetching attendance...
+                    Fetching line graph...
                 </div>
             </ng-template>
+            <!-- end of loading template  -->
             
         </div>
         <!-- end of .col-md-11   -->

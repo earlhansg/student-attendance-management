@@ -2,6 +2,7 @@ import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 // Service
 import { SectionStoreService } from '@shared/services/section/section-store.service';
 import { AttendanceMonthlyService } from '@shared/services/attendance/attendance-monthly.service';
+import { AttendanceStoreService } from '@shared/services/attendance/attendance-store.service';
 // Model
 import { AttendanceByMonth } from '@app/dashboard/shared/models';
 // RXJS
@@ -23,6 +24,7 @@ export class AttendancesComponent implements OnInit {
 
   constructor(
     public sectionStore: SectionStoreService,
+    public attendanceStore: AttendanceStoreService,
     private attendanceMonthlyService: AttendanceMonthlyService) {}
 
   ngOnInit() {
