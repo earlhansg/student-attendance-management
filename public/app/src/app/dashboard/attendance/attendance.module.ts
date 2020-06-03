@@ -9,11 +9,12 @@ import { AttendancesComponent } from './containers/attendances/attendances.compo
 import { AttendanceComponent } from './containers/attendance/attendance.component';
 import { LineGraphComponent } from './components/line-graph/line-graph.component';
 import { AttendanceListComponent } from './components/attendance-list/attendance-list.component';
+import { AttendanceFormComponent } from './components/attendance-form/attendance-form.component';
 // Bootstrap
 import { TabsModule } from 'ngx-bootstrap/tabs';
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
 // Chart
 import { ChartsModule } from 'ng2-charts';
-
 
 
 @NgModule({
@@ -23,13 +24,15 @@ import { ChartsModule } from 'ng2-charts';
     SharedModule,
     FontAwesomeModule,
     TabsModule.forRoot(),
-    ChartsModule
+    ChartsModule,
+    BsDatepickerModule.forRoot()
   ],
   declarations: [
     AttendancesComponent,
     AttendanceComponent,
     LineGraphComponent,
-    AttendanceListComponent
+    AttendanceListComponent,
+    AttendanceFormComponent
   ]
 })
 export class AttendanceModule { }

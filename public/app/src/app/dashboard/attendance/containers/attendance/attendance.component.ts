@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy, OnInit } from '@angular/core';
 
-import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
+import { faFileSignature } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-attendance',
@@ -9,7 +9,7 @@ import { faAddressCard } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './attendance.component.html'
 })
 export class AttendanceComponent implements OnInit {
-
+  faFileSignature = faFileSignature;
   constructor() {}
 
   ngOnInit() {}
