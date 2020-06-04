@@ -50,7 +50,7 @@ export class AttendanceStoreService {
         const attendance = await this.attendanceService
           .createAttendance(body)
           .toPromise();
-        // this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard/attendance']);
         const index = this.attendance.indexOf(this.attendance.find(data => data.id === body.id));
         this.attendance[index] = {
           ...attendance

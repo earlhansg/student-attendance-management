@@ -1,50 +1,45 @@
 <div class="attendance-form">
-    <div class="date-picker">
-        <input type="text"
-            placeholder="Datepicker"
-            bsDatepicker>
-    </div>
-
-    <div class="list-container">
-        <div class="student d-flex flex-row align-items-center">
-            <span class="student__icon">
-                <fa-icon [icon]="faUser"></fa-icon>
-            </span>
-            <div class="d-flex flex-column ml-2">
-                <span class="student__name">Earl Hans Genoso</span>
-                <span class="student__gender"> Male</span>
-            </div>
-            <div class="custom-control custom-checkbox ml-auto">
-                <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-                <label class="custom-control-label" for="customCheck"></label>
-            </div>
+    <form [formGroup]="form">
+        <div class="date-picker">
+            <input type="text"
+                   bsDatepicker
+                   [bsConfig]="{ isAnimated: true }"
+                   formControlName="date">
         </div>
-        <div class="student d-flex flex-row align-items-center">
+        <!-- end of .date-picker  -->
+        <div class="list-container" 
+             formArrayName="students">
+            <div class="student d-flex flex-row align-items-center" 
+                 *ngFor="let student of formStudents.controls; index as i;">
                 <span class="student__icon">
                     <fa-icon [icon]="faUser"></fa-icon>
                 </span>
-                <div class="d-flex flex-column ml-2">
-                    <span class="student__name">Earl Hans Genoso</span>
-                    <span class="student__gender"> Male</span>
+                <!-- end of .student__icon  -->
+                <div class="d-flex flex-column ml-3">
+                    <span class="student__name">
+                        {{student.value.firstName}} {{student.value.lastName}}</span>
+                    <span class="student__gender">
+                        {{student.value.gender === 'M' ? 'Male' : 'Female' }}</span>
                 </div>
+                <!-- end of .d-flex  -->
                 <div class="custom-control custom-checkbox ml-auto">
-                    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-                    <label class="custom-control-label" for="customCheck"></label>
+                    <input type="checkbox" 
+                           class="custom-control-input" 
+                           [id]="i" 
+                           [name]="i"
+                           [checked]="student.value.status"
+                           (change)="changeStatus($event, student.value.id)">
+                    <label class="custom-control-label" [for]="i"></label>
                 </div>
+                <!-- end of .custom-control  -->
+            </div>
+            <!-- end of .student  -->
         </div>
-        <div class="student d-flex flex-row align-items-center">
-                <span class="student__icon">
-                    <fa-icon [icon]="faUser"></fa-icon>
-                </span>
-                <div class="d-flex flex-column ml-2">
-                    <span class="student__name">Earl Hans Genoso</span>
-                    <span class="student__gender"> Male</span>
-                </div>
-                <div class="custom-control custom-checkbox ml-auto">
-                    <input type="checkbox" class="custom-control-input" id="customCheck" name="example1">
-                    <label class="custom-control-label" for="customCheck"></label>
-                </div>
+        <!-- end of .list-container  -->
+        <div class="mb-3">
+            <button class="btn btn-outline-primary" (click)="onSave()">Save</button>
         </div>
-    </div>
-    
+        <!-- end of .mb-3  -->
+    </form>
 </div>
+<!-- end of .attendance-form  -->

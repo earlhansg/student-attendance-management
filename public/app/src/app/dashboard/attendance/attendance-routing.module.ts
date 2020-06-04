@@ -6,8 +6,7 @@ import { AttendanceComponent } from './containers/attendance/attendance.componen
 
 export const ROUTES: Routes = [
   { path: '', component:  AttendancesComponent },
-  { path: 'new', component:  AttendanceComponent },
-  { path: ':id', component:  AttendanceComponent }
+  { path: ':section', component:  AttendanceComponent }
 ];
 
 

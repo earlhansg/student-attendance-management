@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AttendanceRoutingModule } from './attendance-routing.module';
 import { SharedModule } from '@app/dashboard/shared/shared.module';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ReactiveFormsModule } from '@angular/forms';
 // Components
 import { AttendancesComponent } from './containers/attendances/attendances.component';
 import { AttendanceComponent } from './containers/attendance/attendance.component';
@@ -25,7 +26,8 @@ import { ChartsModule } from 'ng2-charts';
     FontAwesomeModule,
     TabsModule.forRoot(),
     ChartsModule,
-    BsDatepickerModule.forRoot()
+    BsDatepickerModule.forRoot(),
+    ReactiveFormsModule
   ],
   declarations: [
     AttendancesComponent,
