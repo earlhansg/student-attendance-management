@@ -46,29 +46,29 @@
   ],
   "attendance": [
     {
-      "id": 1,
-      "date": "2020-05-01T23:28:56.782Z",
-      "sectionId": 1,
+      "date": "06/05/2020",
       "students": [
         {
+          "status": true,
           "id": 1,
           "idNumber": 22222111,
           "firstName": "Earl",
           "lastName": "Genoso",
           "gender": "M",
-          "section": 1,
-          "status": true
+          "section": 1
         },
         {
+          "status": true,
           "id": 4,
           "idNumber": 227892111,
           "firstName": "Kristy Mae",
           "lastName": "Almuete",
           "gender": "F",
-          "section": 1,
-          "status": true
+          "section": 1
         }
-      ]
+      ],
+      "id": 1,
+      "sectionId": 1
     },
     {
       "id": 2,
@@ -144,6 +144,31 @@
       ],
       "sectionId": 1,
       "id": 4
+    },
+    {
+      "date": "2020-06-05T13:37:26.412Z",
+      "students": [
+        {
+          "status": false,
+          "id": 1,
+          "idNumber": 22222111,
+          "firstName": "Earl",
+          "lastName": "Genoso",
+          "gender": "M",
+          "section": 1
+        },
+        {
+          "status": false,
+          "id": 4,
+          "idNumber": 227892111,
+          "firstName": "Kristy Mae",
+          "lastName": "Almuete",
+          "gender": "F",
+          "section": 1
+        }
+      ],
+      "sectionId": 1,
+      "id": 5
     }
   ],
   "attendanceByStudent": [

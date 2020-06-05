@@ -37,7 +37,10 @@
         </div>
         <!-- end of .list-container  -->
         <div class="mb-3">
-            <button class="btn btn-outline-primary" (click)="onSave()">Save</button>
+            <button class="btn btn-outline-primary" (click)="onSave()">
+                {{existing ? 'Update' : 'Save' }}
+            </button>
+            <button class="btn btn-outline-secondary ml-2" [routerLink]="['../']">Cancel</button>
         </div>
         <!-- end of .mb-3  -->
     </form>

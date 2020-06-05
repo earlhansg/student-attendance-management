@@ -18,4 +18,7 @@ export class AttendanceListComponent {
 
   constructor(private router: Router) {}
 
+  updateAttendance(id: number) {
+    this.router.navigateByUrl(`dashboard/attendance/edit-${id}`);
+  }
 }

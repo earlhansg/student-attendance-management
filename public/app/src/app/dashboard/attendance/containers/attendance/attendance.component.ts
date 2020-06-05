@@ -1,9 +1,10 @@
 import { Component, ChangeDetectionStrategy, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-// Service
-import { StudentStoreService } from '@app/dashboard/shared/services/student/student-store.service';
+// Services
+import { StudentStoreService } from '@shared/services/student/student-store.service';
+import { AttendanceStoreService } from '@shared/services/attendance/attendance-store.service';
 // Models
-import { Student } from '@app/dashboard/shared/models';
+import { Student, ClassAttendance } from '@app/dashboard/shared/models';
 // RXJS
 import { Observable, Subscription } from 'rxjs';
 // Icon
@@ -19,10 +20,12 @@ export class AttendanceComponent implements OnInit, OnDestroy {
   faFileSignature = faFileSignature;
   params: any;
   students$: Observable<Student[]>;
+  attendance$: Observable<ClassAttendance[]>;
   subscription: Subscription;
 
   constructor(
     private studentStore: StudentStoreService,
+    private attendanceStore: AttendanceStoreService,
     private route: ActivatedRoute) {}
 
   ngOnInit() {
@@ -30,6 +33,8 @@ export class AttendanceComponent implements OnInit, OnDestroy {
       .subscribe(param => {
         if (Object.keys(param)[0] === param.section.split('-')[0] ) {
           this.students$ = this.studentStore.getSectionById(param.section.split('-')[1]);
+        } else if ('edit' === param.section.split('-')[0]) {
+          this.attendance$ = this.attendanceStore.getAttendanceById(param.section.split('-')[1], true);
         }
     });
   }

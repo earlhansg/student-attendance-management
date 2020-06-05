@@ -12,9 +12,12 @@
             </div>
             <!-- end of .header  -->
 
-            <ng-container *ngIf="students$ | async as students">
+            <ng-container 
+                *ngIf="students$ || attendance$">
                 <!-- attendance form -->
-                <app-attendance-form [students]="students"></app-attendance-form>
+                <app-attendance-form 
+                    [students]="(students$ | async)"
+                    [attendance]="(attendance$ | async)"></app-attendance-form>
             </ng-container>
 
             <ng-template #load>

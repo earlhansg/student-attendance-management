@@ -67,6 +67,7 @@ export class AttendanceStoreService {
   }
 
   async updateAttendance(body: ClassAttendance) {
+    console.log('update', body);
     const attendance = this.attendance.find(data => data.id === body.id);
     if (attendance) {
       const index = this.attendance.indexOf(attendance);
@@ -82,7 +83,7 @@ export class AttendanceStoreService {
         await this.attendanceService
           .updateAttendance(body.id, body)
           .toPromise();
-        // this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard/attendance']);
       } catch (e) {
 
         console.log(e);
@@ -116,8 +117,12 @@ export class AttendanceStoreService {
     this.attendance = await this.attendanceService.getAttendance().toPromise();
   }
 
-  getAttendanceById(paramId): Observable<ClassAttendance[]> {
-    if (paramId) {
+  getAttendanceById(paramId, update: boolean): Observable<ClassAttendance[]> {
+    if (update) {
+      return this.attendance$.pipe(
+        map(attendance => attendance.filter(item => item.id === parseInt(paramId, 10)))
+      );
+    } else {
       return this.attendance$.pipe(
         map(attendance => attendance.filter(item => item.sectionId === parseInt(paramId, 10)))
       );

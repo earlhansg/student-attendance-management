@@ -11,9 +11,9 @@
         <ng-container *ngIf="attendance.length; else noAttendance">
             <tbody>
                 <tr *ngFor="let list of attendance">
-                    <td>{{list.id}}</td>
-                    <td>{{list.date | date: 'fullDate'}}</td>
-                    <td>{{sectionName}}</td>
+                    <td (click)="updateAttendance(list.id)">{{list.id}}</td>
+                    <td (click)="updateAttendance(list.id)">{{list.date | date: 'fullDate'}}</td>
+                    <td (click)="updateAttendance(list.id)">{{sectionName}}</td>
                 </tr>
             </tbody>
             <!-- end of tbody  -->

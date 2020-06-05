@@ -29,7 +29,8 @@ export class AttendanceService extends RestService {
  }
 
  updateAttendance(id: number, body: ClassAttendance): Observable<ClassAttendance> {
-   return this.request(`${this.url}/${id}`, HttpMethodEnum.PATCH, body);
+  //  console.log(body);
+   return this.request(`${this.url}/${id}`, HttpMethodEnum.PUT, body);
  }
 
  removeAttendance(id: number): Observable<ClassAttendance> {
