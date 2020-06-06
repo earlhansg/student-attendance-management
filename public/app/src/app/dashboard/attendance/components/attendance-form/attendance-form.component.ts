@@ -35,6 +35,7 @@ export class AttendanceFormComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.students) {
+      console.log(this.students);
       this.emptyStudent();
 
       const value = this.students;
@@ -52,7 +53,7 @@ export class AttendanceFormComponent implements OnChanges {
       this.emptyStudent();
       this.fetchExistingAttendance();
 
-    } else {
+    } else if (!this.attendance[0] && this.students === null) {
       this.router.navigate(['dashboard/attendance']);
     }
   }
@@ -105,9 +106,9 @@ export class AttendanceFormComponent implements OnChanges {
   onSave() {
     const { students } = this.form.value;
     const sectionId = students[0].section;
-    const id = students[0].id;
+    const id = this.attendance[0].id;
     if (this.existing) {
-      this.attendanceStore.updateAttendance({...this.form.value, id, sectionId });
+      this.attendanceStore.updateAttendance({id, sectionId, ...this.form.value });
     } else {
       this.attendanceStore.addAttendance({...this.form.value, sectionId });
     }
