@@ -67,7 +67,6 @@ export class AttendanceStoreService {
   }
 
   async updateAttendance(body: ClassAttendance) {
-    console.log('update', body);
     const attendance = this.attendance.find(data => data.id === body.id);
     if (attendance) {
       const index = this.attendance.indexOf(attendance);
@@ -104,7 +103,7 @@ export class AttendanceStoreService {
     if (serverRemove) {
       try {
         await this.attendanceService.removeAttendance(id).toPromise();
-        // this.router.navigate(['dashboard']);
+        this.router.navigate(['dashboard/attendance']);
       } catch (e) {
         console.error(e);
         this.attendance = [...this.attendance, attendance];

@@ -37,10 +37,17 @@
         </div>
         <!-- end of .list-container  -->
         <div class="mb-3">
+            <!-- btn for Update or Save  -->
             <button class="btn btn-outline-primary" (click)="onSave()">
                 {{existing ? 'Update' : 'Save' }}
             </button>
+            <!-- btn for Cancel  -->
             <button class="btn btn-outline-secondary ml-2" [routerLink]="['../']">Cancel</button>
+            <!-- btn for Delete  -->
+            <button *ngIf="existing" 
+                    type="button" 
+                    class="btn btn-outline-danger ml-2" 
+                    (click)="openModal()">Delete</button>
         </div>
         <!-- end of .mb-3  -->
     </form>

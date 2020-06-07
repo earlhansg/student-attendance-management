@@ -4,9 +4,13 @@ import { formatDate } from '@angular/common';
 import { Router } from '@angular/router';
 // Service
 import { AttendanceStoreService } from '@shared/services/attendance/attendance-store.service';
+import { BsModalRef, BsModalService } from 'ngx-bootstrap/modal';
 // Icon
 import { faUser } from '@fortawesome/free-solid-svg-icons';
 import { Student, ClassAttendance } from '@app/dashboard/shared/models';
+// Component
+import { ConfirmDialogComponent } from '@shared/components/confirm-dialog/confirm-dialog.component';
+
 @Component({
   selector: 'app-attendance-form',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -28,10 +32,14 @@ export class AttendanceFormComponent implements OnChanges {
     date: [ new Date(), Validators.required],
     students: this.fb.array([''])
   });
+
+  bsModalRef: BsModalRef;
+
   constructor(
     private fb: FormBuilder,
     private attendanceStore: AttendanceStoreService,
-    private router: Router) {}
+    private router: Router,
+    private modalService: BsModalService) {}
 
   ngOnChanges(changes: SimpleChanges) {
     if (this.students) {
@@ -112,6 +120,20 @@ export class AttendanceFormComponent implements OnChanges {
     } else {
       this.attendanceStore.addAttendance({...this.form.value, sectionId });
     }
+  }
+
+  openModal() {
+    const initialState = {
+      message: 'remove'
+    };
+    this.bsModalRef = this.modalService.show(ConfirmDialogComponent,
+      { initialState, class: 'modal-sm' });
+    this.bsModalRef.content.title = 'remove';
+    this.bsModalRef.content.event.subscribe(response => {
+      if (response) {
+        this.attendanceStore.removeAttendance(this.attendance[0].id);
+      }
+    });
   }
 
 }
