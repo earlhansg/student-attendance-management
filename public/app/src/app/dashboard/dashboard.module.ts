@@ -8,10 +8,12 @@ import { StudentModule } from './student/student.module';
 import { SectionModule } from './section/section.module';
 import { AttendanceModule } from './attendance/attendance.module';
 import { ModalModule } from 'ngx-bootstrap/modal';
+import { AuthModule } from '@app/auth/auth.module';
 // Components
 import { DashboardComponent } from '@app/dashboard/container/dashboard.component';
 import { ConfirmDialogComponent } from '@app/dashboard/shared/components/confirm-dialog/confirm-dialog.component';
 
+import { AuthService} from '@app/auth/shared/service/auth.service';
 
 @NgModule({
   imports: [
@@ -22,7 +24,8 @@ import { ConfirmDialogComponent } from '@app/dashboard/shared/components/confirm
     StudentModule,
     SectionModule,
     AttendanceModule,
-    ModalModule.forRoot()
+    ModalModule.forRoot(),
+    AuthModule
   ],
   declarations: [
     DashboardComponent,
@@ -30,6 +33,7 @@ import { ConfirmDialogComponent } from '@app/dashboard/shared/components/confirm
   ],
   entryComponents: [
     ConfirmDialogComponent
-  ]
+  ],
+  providers: [AuthService]
 })
 export class DashboardModule {}

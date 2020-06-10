@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+// Service
+import { AuthService } from '@app/auth/shared/service/auth.service';
+
 
 
 @Component({
@@ -8,7 +9,14 @@ import { Router } from '@angular/router';
   templateUrl: './login.component.html'
 })
 export class LoginComponent {
+  error: any;
 
-  constructor(private router: Router) {}
+  constructor(private authService: AuthService) {}
+
+  loginUser(value: {email: string; password: string}) {
+    this.authService.loginUser(value.email, value.password).then(res => {
+      this.error = res;
+    });
+  }
 
 }

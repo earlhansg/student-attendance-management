@@ -21,26 +21,26 @@
                  data-toggle="dropdown" 
                  aria-haspopup="true" 
                  aria-expanded="false">
-                Earl Hans Genoso
+                 {{ user.firstName }} {{ user.lastName }}
               </a>
               <!-- end of .nav-item  -->
               <div class="dropdown-menu" 
                    aria-labelledby="navbarDropdown">
                 <a class="dropdown-item" 
-                   href="#">Students
+                   routerLink="students">Students
                 </a>
                 <!-- end of .dropdown-item  -->
                 <a class="dropdown-item" 
-                   href="#">Sections
+                   routerLink="section">Sections
                 </a>
                 <!-- end of .dropdown-item  -->
                 <a class="dropdown-item" 
-                   href="#">Attendance
+                   routerLink="attendance">Attendance
                 </a>
                 <!-- end of .dropdown-item  -->
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" 
-                   href="#">Signout
+                   (click)="signOut()">Signout
                 </a>
               </div>
               <!-- end of .dropdown-menu  -->

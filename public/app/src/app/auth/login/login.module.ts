@@ -13,7 +13,7 @@ import { LoginRoutingModule } from './login-routing.module';
   imports: [
     CommonModule,
     LoginRoutingModule,
-    SharedModule
+    SharedModule.forRoot()
   ],
   declarations: [ LoginComponent ]
 })

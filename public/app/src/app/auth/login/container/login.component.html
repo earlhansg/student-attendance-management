@@ -1,8 +1,8 @@
 <div>
     <!-- auth from component  -->
-    <app-auth-form (submitted)="loginUser($event)">
-      <h1>Login</h1>
+    <app-auth-form (submitted)="loginUser($event.value)">
+      <h1>Student Class Attendance</h1>
       <button type="submit">Login</button>
       <div class="error" *ngIf="error">{{ error }}</div>
     </app-auth-form>
-</div>
+</div>  
