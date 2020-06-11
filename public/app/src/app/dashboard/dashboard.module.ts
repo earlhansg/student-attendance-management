@@ -12,8 +12,9 @@ import { AuthModule } from '@app/auth/auth.module';
 // Components
 import { DashboardComponent } from '@app/dashboard/container/dashboard.component';
 import { ConfirmDialogComponent } from '@app/dashboard/shared/components/confirm-dialog/confirm-dialog.component';
-
-import { AuthService} from '@app/auth/shared/service/auth.service';
+// Auth
+import { AuthService } from '@app/auth/shared/service/auth.service';
+import { AuthGuard } from '@app/auth/shared/guard/auth.guard';
 
 @NgModule({
   imports: [
@@ -34,6 +35,9 @@ import { AuthService} from '@app/auth/shared/service/auth.service';
   entryComponents: [
     ConfirmDialogComponent
   ],
-  providers: [AuthService]
+  providers: [
+    AuthService,
+    AuthGuard
+  ]
 })
 export class DashboardModule {}

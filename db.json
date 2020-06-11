@@ -41,6 +41,14 @@
       "lastName": "Almuete",
       "gender": "F",
       "section": 1
+    },
+    {
+      "idNumber": "22222111222333",
+      "firstName": "Jason",
+      "lastName": "Bayocot",
+      "gender": "M",
+      "section": "2",
+      "id": 5
     }
   ],
   "sections": [

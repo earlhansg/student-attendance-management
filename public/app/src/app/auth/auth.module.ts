@@ -9,7 +9,7 @@ import { AuthRoutingModule } from './auth-routing.module';
     imports: [
         CommonModule,
         AuthRoutingModule,
-        SharedModule
+        SharedModule.forRoot()
     ]
 })
 export class AuthModule {}

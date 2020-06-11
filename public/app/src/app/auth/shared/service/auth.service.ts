@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 
 import { UserService } from './user.service';
-import { of, BehaviorSubject, Observable, throwError } from 'rxjs';
+import { BehaviorSubject } from 'rxjs';
 
 export interface User {
   userName?: string;

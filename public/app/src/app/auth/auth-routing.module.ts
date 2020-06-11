@@ -6,11 +6,15 @@ export const ROUTES: Routes = [
   {
     path: 'auth',
     children: [
-      { path: '', pathMatch: 'full', redirectTo: 'login' },
       {
         path: 'login',
         loadChildren: () => import('./login/login.module')
         .then(mod => mod.LoginModule)
+      },
+      {
+        path: '',
+        redirectTo: 'login',
+        pathMatch: 'full'
       }
     ]
   }
@@ -18,6 +22,7 @@ export const ROUTES: Routes = [
 
 
 @NgModule({
-  imports: [ RouterModule.forChild(ROUTES) ]
+  imports: [ RouterModule.forChild(ROUTES) ],
+  exports: [RouterModule]
 })
 export class AuthRoutingModule {}
